@@ -17,9 +17,11 @@ function CourseForm(props) {
 
       <SelectInput
         id="author"
+        label="Author"
         name="authorId"
         onChange={props.onChange}
         value={props.course.authorId || ''}
+        options={props.authors}
         error={props.errors.authorId}
       />
 
@@ -40,6 +42,7 @@ function CourseForm(props) {
 
 CourseForm.propTypes = {
   course: PropTypes.object.isRequired,
+  authors: PropTypes.any,
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,

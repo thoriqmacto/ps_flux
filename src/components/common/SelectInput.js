@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function SelectInput(props) {
+  const optionElements = props.options.map((author) => {
+    return <option key={author.id} value={author.id}>{author.name}</option>;
+  });
   let wrapperClass = 'form-group';
   if (props.error.length > 0) {
     wrapperClass += ' has-error';
@@ -18,8 +21,7 @@ function SelectInput(props) {
           className="form-control"
         >
           <option value="" />
-          <option value="1">Cory House</option>
-          <option value="2">Scott Allen</option>
+          {optionElements}
         </select>
       </div>
       {props.error && <div className="alert alert-danger">{props.error}</div>}
@@ -32,8 +34,9 @@ SelectInput.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.any,
   error: PropTypes.string,
+  options: PropTypes.array.isRequired,
 };
 
 SelectInput.defaultProps = {
