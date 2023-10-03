@@ -12,9 +12,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![State Demo](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/04-state_2.png)
 
-![State Declaration in Class Component](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/06-lifecycle_methods_on_class_component.png)
+![State Declaration in Class Component](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/05-state_3.png)
 
-![Lifecycle Methods in Class Component](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/06-state_3.png)
+![Lifecycle Methods in Class Component](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/06-lifecycle_methods_on_class_component.png)
 
 ![Keys for Dynamic Children](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/07-keys_1.png)
 
