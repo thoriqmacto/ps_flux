@@ -3,19 +3,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Notes from the course summarize with snapshot
-![Props and State](snapshot\01-props_1.png)
 
-![Props Demo](snapshot\02-props_2.png)
+![Props and State](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/01-props_1.png)
 
-![State](snapshot\03-state_1.png)
+![Props Demo](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/02-props_2.png)
 
-![State Demo](snapshot\04-state_2.png)
+![State](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/03-state_1.png)
 
-![State Declaration in Class Component](snapshot\06-lifecycle_methods_on_class_component.png)
+![State Demo](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/04-state_2.png)
 
-![Lifecycle Methods in Class Component](snapshot\06-state_3.png)
+![State Declaration in Class Component](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/06-lifecycle_methods_on_class_component.png)
 
-![Keys for Dynamic Children](snapshot\07-keys_1.png)
+![Lifecycle Methods in Class Component](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/06-state_3.png)
+
+![Keys for Dynamic Children](https://github.com/thoriqmacto/ps_flux/blob/main/snapshot/07-keys_1.png)
 
 ## Available Scripts
 
