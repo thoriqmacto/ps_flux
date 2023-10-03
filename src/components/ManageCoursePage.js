@@ -9,6 +9,7 @@ import { Prompt } from 'react-router-dom';
 const ManageCoursePage = (props) => {
   <Prompt when={true} message="Are you sure you want to navigate away?" />;
   const [errors, setErrors] = useState({});
+  const [courses, setCourses] = useState(courseStore.getCourses());
   const [course, setCourse] = useState({
     id: null,
     slug: '',
@@ -20,26 +21,29 @@ const ManageCoursePage = (props) => {
   const [authors, setAuthors] = useState([]);
 
   useEffect(() => {
+    courseStore.addChangeListener(onChange);
     const slug = props.match.params.slug; // from the path '/course/:slug'
-    if (slug) {
+    if (courses.length === 0) {
+      courseActions.loadCourses();
+    } else if (slug) {
       setCourse(courseStore.getCourseBySlug(slug));
     }
-  }, [props.match.params.slug]);
+    return () => courseStore.removeChangeListener(onChange);
+  }, [courses.length, props.match.params.slug]);
 
   useEffect(() => {
     authorApi.getAuthors().then((_authors) => setAuthors(_authors));
   }, []);
+
+  function onChange() {
+    setCourses(courseStore.getCourses());
+  }
 
   function handleChange({ target }) {
     setCourse({
       ...course,
       [target.name]: target.value,
     });
-
-    // setAuthors({
-    //   ...authors,
-    //   [target.name]: target.value,
-    // });
   }
 
   function handleSubmit(event) {
