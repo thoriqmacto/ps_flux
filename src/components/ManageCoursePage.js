@@ -4,10 +4,10 @@ import courseStore from '../stores/courseStore';
 import { toast } from 'react-toastify';
 import * as courseActions from '../actions/courseActions';
 import * as authorApi from '../api/authorApi';
-import { Prompt } from 'react-router-dom';
+import NotFoundPage from './NotFoundPage';
+import { Route } from 'react-router-dom';
 
 const ManageCoursePage = (props) => {
-  <Prompt when={true} message="Are you sure you want to navigate away?" />;
   const [errors, setErrors] = useState({});
   const [courses, setCourses] = useState(courseStore.getCourses());
   const [course, setCourse] = useState({
@@ -20,6 +20,7 @@ const ManageCoursePage = (props) => {
 
   const [authors, setAuthors] = useState([]);
 
+  // For course
   useEffect(() => {
     courseStore.addChangeListener(onChange);
     const slug = props.match.params.slug; // from the path '/course/:slug'
@@ -27,10 +28,13 @@ const ManageCoursePage = (props) => {
       courseActions.loadCourses();
     } else if (slug) {
       setCourse(courseStore.getCourseBySlug(slug));
+    } else {
+      props.history.push('not-found');
     }
     return () => courseStore.removeChangeListener(onChange);
-  }, [courses.length, props.match.params.slug]);
+  }, [courses.length, props.history, props.match.params.slug]);
 
+  // for authors
   useEffect(() => {
     authorApi.getAuthors().then((_authors) => setAuthors(_authors));
   }, []);
